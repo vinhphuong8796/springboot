@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// 	function myFunction() {
+// 		var msg = document.getElementById("id").value;
+// 		var msg2 = document.getElementById("password").value;
+// 		console.londex off la" + msg.indexOf("/"));
+// 		console.log("last index off la" + msg.lastIndexOf("/"));
+// 		if (msg.length == 0 || msg.length == null || msg2.length == 0
+// 				|| msg2.length == null) {
+// 			alert("chuoi không được rỗng");
+// 		} else if (msg.length != 10 || msg2.length != 10) {
+// 			alert("chuoi phai 10 ki tu ");
+// 		} else if (msg.indexOf("/") != 4 || msg2.indexOf("/") != 4) {
+// 			alert("chuoi / dau sai ");
+// 		} else if (msg.lastIndexOf("/") != 7 || msg2.lastIndexOf("/") != 7) {
+// 			alert("chuoi / sau sau sau ");
+// 		} else {
+// 			alert("thanh công");
+// 		}
+// 	}
+</script>
+</head>
+<body>
+
+	<!-- <form action="/login" method="POST"> -->
+	<div th:text="${message}">...</div>
+	fullname :
+	<input type="text" name="id" id="id">
+	<br> Em_no :
+	<input type="Password" name="password" id="password">
+	<br>
+	<input type="submit" value="Submit" name="submit">
+
+	<input type="submit" value="Clear" name="clear">
+	<input type="button" value="TextJS" name="TextJS"
+		onclick="myFunction()">
+	<!-- </form> -->
+
+</body>
+</html>

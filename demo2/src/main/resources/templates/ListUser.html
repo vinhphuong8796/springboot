@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<!-- <form th:action="@{'/search'}" onsubmit="return myFunction()"> -->
+	<form th:action="@{'/search'}" th:object="${LoginForm}" method="POST">
+		ID<input type="text" name="id" id="id"><br> User name<input
+			type="text" name="userName" id="username"><br> Time<input
+			type="text" name="datetime" id="datetime"><br> <input
+			type="submit" value="Gởi">
+		<!-- onclick="myFunction()" -->
+		<br>
+		<br>
+		<br>
+		<br>
+	</form>
+	<a th:href="@{'/first'}"><input type="Button" value="<<"
+		th:disabled="${PreDisable}" name="first"></a>
+	<a th:href="@{'/pre'}"><input type="Button" value="<"
+		th:disabled="${PreDisable}" name="pre"></a>
+	<a th:href="@{'/next'}"><input type="Button" value=">"
+		th:disabled="${NextDisable}" name="next"></a>
+	<a th:href="@{'/last'}"><input type="Button" value=">>"
+		th:disabled="${NextDisable}" name="last"></a>
+	<form>
+		<table border="1">
+
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Time</th>
+			</tr>
+			<tr th:each="list : ${session.listUser}">
+				<td th:utext="${list.empNo}">...</td>
+				<td th:utext="${list.fullName}">...</td>
+				<td th:utext="${list.hireDate}">...</td>
+			</tr>
+		</table>
+	</form>
+	<script>
+		// function myFunction() {
+		// 		var msg = document.getElementById("id").value;
+		// 		var msg2 = document.getElementById("username").value;
+		// 		console.log("dex off la" + msg.indexOf("/"));
+		// 		console.log("last index off la" + msg.lastIndexOf("/"));
+		// 		if (msg.length == 0 || msg.length == null || msg2.length == 0
+		// 				|| msg2.length == null) {
+		// 			alert("chuoi không được rỗng");
+		// 			return false;
+		// 		} else if (msg.length != 10 || msg2.length != 10) {
+		// 			alert("chuoi phai 10 ki tu ");
+		// 			return false;
+		// 		} else if (msg.indexOf("/") != 4 || msg2.indexOf("/") != 4) {
+		// 			alert("chuoi / dau sai ");
+		// 			return false;
+		// 		} else if (msg.lastIndexOf("/") != 7 || msg2.lastIndexOf("/") != 7) {
+		// 			alert("chuoi / sau sau sau ");
+		// 			return false;
+		// 		} else {
+		// 			alert("thanh công");
+		// 			return true;
+		// 		}
+		// 	}
+	</script>
+</body>
+</html>
